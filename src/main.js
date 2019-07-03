@@ -8,6 +8,10 @@ import 'mint-ui/lib/style.css'
 import './assets/mui/css/mui.min.css';
 import './assets/mui/css/mui-extra.css'
 
+// 引入axios
+import axios from 'axios';
+// 赋值给vue原型
+Vue.prototype.$http=axios
 
 Vue.use(MintUI)
 Vue.config.productionTip = false

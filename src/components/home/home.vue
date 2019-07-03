@@ -8,41 +8,41 @@
     </mt-swipe>
     <!-- 九宫格标签 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-home myicon1"></span>
-          <div class="mui-media-body">Home</div>
-        </a>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 icon">
+        <router-link to="/home/newlist">
+          <img src="../../assets/img/menu3.png" alt />
+          <div class="mui-media-body">新闻资讯</div>
+       </router-link>
       </li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-email"></span>
-          <div class="mui-media-body">Email</div>
-        </a>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 icon">
+        <router-link to="">
+          <img src="../../assets/img/menu4.png" alt />
+          <div class="mui-media-body">图片分享</div>
+        </router-link>
       </li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-chatbubble"></span>
-          <div class="mui-media-body">Chat</div>
-        </a>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 icon">
+        <router-link to="">
+          <img src="../../assets/img/menu5.png" alt />
+          <div class="mui-media-body">商品购买</div>
+        </router-link>
       </li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-location"></span>
-          <div class="mui-media-body">location</div>
-        </a>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 icon">
+        <router-link to="">
+          <img src="../../assets/img/menu6.png" alt />
+          <div class="mui-media-body">留言反馈</div>
+        </router-link>
       </li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-search"></span>
-          <div class="mui-media-body">Search</div>
-        </a>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 icon">
+       <router-link to="">
+          <img src="../../assets/img/menu9.png" alt />
+          <div class="mui-media-body">视频专区</div>
+        </router-link>
       </li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-phone"></span>
-          <div class="mui-media-body">Phone</div>
-        </a>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 icon">
+        <router-link to="">
+          <img src="../../assets/img/menu10.png" alt />
+          <div class="mui-media-body">联系我们</div>
+       </router-link>
       </li>
     </ul>
   </div>
@@ -71,12 +71,20 @@ export default {};
   background-color: #ff2d4b;
   color: #fff;
 }
-.myicon1::before {
-  content: "";
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  background: url(../assets/img/menu3.png);
-  background-size: cover;
+.mui-grid-view.mui-grid-9 {
+  background-color: white;
+  border: none;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+}
+ .icon{
+  border: none !important; 
+}
+
+.mui-media-body{
+  font-size: 12px !important;
 }
 </style>
