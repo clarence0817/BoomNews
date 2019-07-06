@@ -1,57 +1,48 @@
 <template>
   <div>
     <ul class="mui-table-view">
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img
-            class="mui-media-object mui-pull-left"
-            src="https://avatars0.githubusercontent.com/u/50936733?s=460&v=4"
-          />
+      <li v-for="(item,index) in newlist" :key="index" class="mui-table-view-cell mui-media">
+        <router-link  :to="'/home/newinfo/'+item.id">
+          <img class="mui-media-object mui-pull-left" src="../../assets/img/timg.jpg" />
           <div class="mui-media-body">
-            <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+            <p class="mui-ellipsis">{{item.zhaiyao}}</p>
             <div>
-              <span style="float:left">发表时间:2015年12月1日</span>
-              <span style="float:right">点击次数:111次</span>
+              <span style="float:left">发布时间:{{item.add_time | datefrom}}</span>
+              <span style="float:right">点击:{{item.click}}次</span>
             </div>
           </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img
-            class="mui-media-object mui-pull-left"
-            src="https://avatars0.githubusercontent.com/u/50936733?s=460&v=4"
-          />
-          <div class="mui-media-body">
-            <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
-            <div>
-              <span style="float:left">发表时间:2015年12月1日</span>
-              <span style="float:right">点击次数:111次</span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img
-            class="mui-media-object mui-pull-left"
-            src="https://avatars0.githubusercontent.com/u/50936733?s=460&v=4"
-          />
-          <div class="mui-media-body">
-            <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
-            <div>
-              <span style="float:left">发表时间:2015年12月1日</span>
-              <span style="float:right">点击次数:111次</span>
-            </div>
-          </div>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      // 新闻列表数据源
+      newlist: []
+    };
+  },
+  methods: {
+    getnewlist() {
+      this.$http({
+        method: "get",
+        url: "http://127.0.0.1:8888/api/getnewslist"
+      }).then(res => {
+        console.log(res);
+        let { message, status } = res.data;
+        if (status == 0) {
+          this.newlist = message;
+        }
+      });
+    }
+  },
+  mounted() {
+    this.getnewlist();
+  }
+};
 </script>
 
 <style>
@@ -61,5 +52,8 @@ export default {};
 .mui-table-view span {
   color: blue;
   font-size: 12px;
+}
+.mui-table-view {
+  margin-bottom: 50px;
 }
 </style>

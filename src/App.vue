@@ -8,7 +8,7 @@
       <router-view />
     </transition>
     <!-- 下导航 -->
-    <nav class="mui-bar mui-bar-tab mybottom">
+    <nav class="mui-bar mui-bar-tab " id="mybottom">
       <router-link to="/home" class="mui-tab-item" href="#tabbar">
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
@@ -43,8 +43,10 @@ export default {
 .myheard {
   margin-bottom: 40px;
 }
-.mybottom {
-  margin-top: 50px;
+#mybottom {
+  /* margin-top: 50px; */
+  /* padding-bottom: 50px; */
+  
 }
 /* 图片从右边进来 */
 .v-enter {
